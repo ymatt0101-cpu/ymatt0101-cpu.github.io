@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <title>YANG BING-YOU // ECONOMIC PORTFOLIO</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Orbitron:wght@400;900&display=swap');
+
+        :root {
+            --chrome-dark: #000000;
+            --accent-blue: #0044ff;
+            /* 高級白漸層背景 */
+            --bg-gradient: radial-gradient(circle at 50% 0%, #ffffff 0%, #fcfdfe 40%, #e2e5e9 100%);
+        }
+
+        body {
+            background: var(--bg-gradient);
+            background-attachment: fixed;
+            color: var(--chrome-dark);
+            margin: 0;
+            font-family: 'Helvetica Neue', Arial, "Microsoft JhengHei", sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* 標題區：極致反光效果 */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+        }
+
+        .liquid-name {
+            font-family: 'Syncopate', sans-serif;
+            font-size: clamp(3.5rem, 15vw, 10rem);
+            color: #111;
+            line-height: 0.85;
+            margin: 0;
+            /* 整合之前的強烈反光與流動濾鏡 */
+            filter: url(#ultra-chrome-reflect) drop-shadow(0 15px 30px rgba(0,0,0,0.1));
+            text-transform: uppercase;
+            letter-spacing: -5px;
+            z-index: 10;
+        }
+
+        .hero-tag {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.8rem;
+            letter-spacing: 12px;
+            color: #999;
+            margin-top: 40px;
+            font-weight: 900;
+        }
+
+        /* 內容容器：確保自傳在白底上清晰易讀 */
+        .container {
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 0 20px 100px;
+            position: relative;
+            z-index: 20;
+        }
+
+        section {
+            margin-bottom: 120px;
+            background: rgba(255, 255, 255, 0.5);
+            backdrop-filter: blur(15px);
+            padding: 50px;
+            border: 1px solid rgba(255, 255, 255, 0.8);
+            box-shadow: 20px 20px 60px rgba(0,0,0,0.03);
+            transition: 0.4s ease;
+        }
+
+        section:hover {
+            border-color: var(--accent-blue);
+            transform: translateY(-5px);
+        }
+
+        .section-header {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.7rem;
+            color: var(--accent-blue);
+            margin-bottom: 10px;
+            display: block;
+            letter-spacing: 5px;
+            font-weight: 900;
+        }
+
+        h2 {
+            font-family: 'Syncopate', sans-serif;
+            font-size: 1.6rem;
+            margin-bottom: 35px;
+            border-bottom: 5px solid #000;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        p {
+            line-height: 2.1;
+            color: #222;
+            font-size: 1.15rem;
+            text-align: justify;
+        }
+
+        /* 圖片放置區 */
+        .image-box {
+            width: 100%;
+            height: 480px;
+            background: #f0f0f0;
+            margin: 35px 0;
+            border: 1px solid #eee;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .image-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: 0.8s;
+            filter: grayscale(100%);
+        }
+
+        .image-box:hover img {
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+        /* 數據高亮模組 */
+        .stat-flex {
+            display: flex;
+            gap: 2px;
+            margin-top: 30px;
+        }
+
+        .stat-item {
+            background: #000;
+            color: #fff;
+            padding: 25px;
+            flex: 1;
+            text-align: center;
+        }
+
+        .stat-item span {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            display: block;
+        }
+
+        .stat-item label {
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            color: #777;
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 0;
+            font-family: 'Syncopate', sans-serif;
+            font-size: 0.7rem;
+            color: #bbb;
+            letter-spacing: 3px;
+        }
+
+        svg { position: absolute; width: 0; height: 0; }
+    </style>
+</head>
+<body>
+
+    <header class="hero">
+        <h1 class="liquid-name">YANG<br>BING YOU</h1>
+        <div class="hero-tag">ECONOMIC EVIDENCE // PORTFOLIO</div>
+    </header>
+
+    <div class="container">
+        
+        <section style="background: transparent; border: none; box-shadow: none; padding-left: 0;">
+            <p style="font-size: 1.4rem; color: #000; font-weight: 500; line-height: 1.5;">
+                「在多數人將經濟現象視為隨機波動時，我更傾向於在數據與實作中打磨理性的判斷力。」
+            </p>
+        </section>
+
+        <section>
+            <span class="section-header">DATA_ANALYSIS_01</span>
+            <h2>數據解構：模擬競技場</h2>
+            <div class="image-box">
+                <img src="stock_analysis.jpg" alt="股票分析實務">
+            </div>
+            <p>
+                在「投資理財」選修課程中，我參與了股票競技場模擬投資。我並非盲目跟風，而是透過新聞媒體分析市場資訊的背後意圖。以「寒舍」作為標的，準確預判觀光業復甦與季節性訂房潮利多。
+            </p>
+            <div class="stat-flex">
+                <div class="stat-item">
+                    <span>46%</span>
+                    <label>ROI PERFORMANCE</label>
+                </div>
+                <div class="stat-item">
+                    <span>8.5%</span>
+                    <label>RISK CONTROL</label>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <span class="section-header">EXTERNALITY_02</span>
+            <h2>環境思辨：地質考察</h2>
+            <div class="image-box">
+                <img src="geology.jpg" alt="地質考察現場">
+            </div>
+            <p>
+                在考察烏溪卓蘭層的過程中，發現壯麗地景旁緊鄰垃圾掩埋場，直觀展現了經濟發展中的「負面外部性」。這啟發我思考，唯有透過整體的經濟激勵機制與政策框架，才能在環境永續與開發之間取得均衡。
+            </p>
+        </section>
+
+        <section>
+            <span class="section-header">GLOBAL_SDGs_03</span>
+            <h2>全球視野：跨域思辨</h2>
+            <div class="image-box">
+                <img src="ubc_trip.jpg" alt="加拿大UBC遊學">
+            </div>
+            <p>
+                參加加拿大 UBC 遊學團，擴展對 SDGs 的認知。我嘗試將烏溪觀察到的開發壓力與全球性減碳趨勢對接，練習在不同尺度下思考資源分配問題。經濟學是解決全球資源不均與環境變遷的基礎框架。
+            </p>
+        </section>
+
+        <section style="background: #000; color: #fff; border: none;">
+            <span class="section-header" style="color: #444;">FUTURE_VISION</span>
+            <h2 style="color: #fff; border-color: #fff;">未來願景</h2>
+            <p style="color: #ccc;">
+                我不滿足於單純的感性觀察，而是渴望在貴系嚴謹的訓練下掌握計量分析與經濟模型。我已準備好投入高密度的專業訓練，將對技術分析的堅持與社會議題的關懷，淬煉成足以應對未來挑戰的專業實踐力。
+            </p>
+        </section>
+
+    </div>
+
+    <svg>
+        <filter id="ultra-chrome-reflect" x="-20%" y="-20%" width="140%" height="140%">
+            <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
+            <feDisplacementMap id="disp" in="SourceGraphic" in2="noise" scale="30" />
+            <feGaussianBlur stdDeviation="1" result="blur" />
+            <feSpecularLighting surfaceScale="7" specularConstant="2.5" specularExponent="50" lighting-color="#ffffff" result="spec">
+                <feDistantLight id="light" azimuth="45" elevation="55" />
+            </feSpecularLighting>
+            <feComposite in="spec" in2="SourceGraphic" operator="in" result="specOut" />
+            <feMerge>
+                <feMergeNode in="SourceGraphic" />
+                <feMergeNode in="specOut" />
+            </feMerge>
+        </filter>
+    </svg>
+
+    <footer>
+        YANG BING-YOU // WEGO HIGH SCHOOL // 2026 ADMISSION
+    </footer>
+
+    <script>
+        const turb = document.querySelector('#turb');
+        const disp = document.querySelector('#disp');
+        const light = document.querySelector('#light');
+
+        window.addEventListener('mousemove', (e) => {
+            const x = e.clientX / window.innerWidth;
+            const y = e.clientY / window.innerHeight;
+            
+            // 互動：反光角度隨滑鼠轉動
+            light.setAttribute('azimuth', x * 360);
+            
+            // 互動：波紋流動與變形
+            turb.setAttribute('baseFrequency', 0.01 + (x * 0.01));
+            disp.setAttribute('scale', 20 + (y * 30));
+        });
+
+        // 點擊震盪效果
+        document.querySelector('.liquid-name').addEventListener('mousedown', () => disp.setAttribute('scale', '100'));
+        document.querySelector('.liquid-name').addEventListener('mouseup', () => disp.setAttribute('scale', '30'));
+    </script>
+</body>
+</html>

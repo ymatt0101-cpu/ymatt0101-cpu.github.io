@@ -2,6 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YANG BING-YOU // ECONOMIC PORTFOLIO</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Syncopate:wght@400;700&family=Orbitron:wght@400;900&display=swap');
@@ -20,6 +21,7 @@
             margin: 0;
             font-family: 'Helvetica Neue', Arial, "Microsoft JhengHei", sans-serif;
             overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
         }
 
         /* 標題區：極致反光效果 */
@@ -31,6 +33,7 @@
             align-items: center;
             text-align: center;
             position: relative;
+            padding: 0 20px;
         }
 
         .liquid-name {
@@ -39,17 +42,19 @@
             color: #111;
             line-height: 0.85;
             margin: 0;
-            /* 整合之前的強烈反光與流動濾鏡 */
+            /* 整合強烈反光與流動濾鏡 */
             filter: url(#ultra-chrome-reflect) drop-shadow(0 15px 30px rgba(0,0,0,0.1));
             text-transform: uppercase;
             letter-spacing: -5px;
             z-index: 10;
+            cursor: pointer;
+            user-select: none;
         }
 
         .hero-tag {
             font-family: 'Orbitron', sans-serif;
-            font-size: 0.8rem;
-            letter-spacing: 12px;
+            font-size: clamp(0.6rem, 2vw, 0.8rem);
+            letter-spacing: clamp(6px, 2vw, 12px);
             color: #999;
             margin-top: 40px;
             font-weight: 900;
@@ -68,15 +73,18 @@
             margin-bottom: 120px;
             background: rgba(255, 255, 255, 0.5);
             backdrop-filter: blur(15px);
-            padding: 50px;
+            -webkit-backdrop-filter: blur(15px);
+            padding: clamp(30px, 5vw, 50px);
             border: 1px solid rgba(255, 255, 255, 0.8);
             box-shadow: 20px 20px 60px rgba(0,0,0,0.03);
             transition: 0.4s ease;
+            border-radius: 4px;
         }
 
         section:hover {
             border-color: var(--accent-blue);
             transform: translateY(-5px);
+            box-shadow: 20px 25px 60px rgba(0, 68, 255, 0.08);
         }
 
         .section-header {
@@ -91,7 +99,7 @@
 
         h2 {
             font-family: 'Syncopate', sans-serif;
-            font-size: 1.6rem;
+            font-size: clamp(1.3rem, 4vw, 1.6rem);
             margin-bottom: 35px;
             border-bottom: 5px solid #000;
             display: inline-block;
@@ -108,7 +116,7 @@
         /* 圖片放置區 */
         .image-box {
             width: 100%;
-            height: 480px;
+            height: clamp(300px, 50vw, 480px);
             background: #f0f0f0;
             margin: 35px 0;
             border: 1px solid #eee;
@@ -116,6 +124,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            border-radius: 2px;
         }
 
         .image-box img {
@@ -131,11 +140,50 @@
             transform: scale(1.05);
         }
 
+        /* 按鈕設計 */
+        .action-btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            border: 2px solid var(--chrome-dark);
+            color: var(--chrome-dark);
+            text-decoration: none;
+            font-family: 'Orbitron', 'Microsoft JhengHei', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            background: transparent;
+            cursor: pointer;
+        }
+
+        .action-btn:hover {
+            background: var(--accent-blue);
+            color: #fff;
+            border-color: var(--accent-blue);
+            box-shadow: 0 10px 20px rgba(0, 68, 255, 0.2);
+            transform: translateY(-3px);
+        }
+
+        /* 黑底區塊專用按鈕 */
+        .action-btn.dark-mode {
+            border-color: #fff;
+            color: #fff;
+        }
+        
+        .action-btn.dark-mode:hover {
+            background: #fff;
+            color: #000;
+            border-color: #fff;
+            box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+        }
+
         /* 數據高亮模組 */
         .stat-flex {
             display: flex;
             gap: 2px;
             margin-top: 30px;
+            flex-wrap: wrap; /* 讓手機版可以換行 */
         }
 
         .stat-item {
@@ -143,6 +191,7 @@
             color: #fff;
             padding: 25px;
             flex: 1;
+            min-width: 200px; /* 手機版最小寬度 */
             text-align: center;
         }
 
@@ -161,10 +210,10 @@
 
         footer {
             text-align: center;
-            padding: 80px 0;
+            padding: 80px 20px;
             font-family: 'Syncopate', sans-serif;
             font-size: 0.7rem;
-            color: #bbb;
+            color: #999;
             letter-spacing: 3px;
         }
 
@@ -180,8 +229,8 @@
 
     <div class="container">
         
-        <section style="background: transparent; border: none; box-shadow: none; padding-left: 0;">
-            <p style="font-size: 1.4rem; color: #000; font-weight: 500; line-height: 1.5;">
+        <section style="background: transparent; border: none; box-shadow: none; padding-left: 0; padding-right: 0;">
+            <p style="font-size: clamp(1.2rem, 3vw, 1.4rem); color: #000; font-weight: 500; line-height: 1.6;">
                 「在多數人將經濟現象視為隨機波動時，我更傾向於在數據與實作中打磨理性的判斷力。」
             </p>
         </section>
@@ -190,7 +239,8 @@
             <span class="section-header">DATA_ANALYSIS_01</span>
             <h2>數據解構：模擬競技場</h2>
             <div class="image-box">
-                <img src="stock_analysis.jpg" alt="股票分析實務">
+                <!-- 將圖片路徑改回本地檔案，請將圖片與 HTML 放在同一個資料夾下 -->
+                <img src="LINE_ALBUM_20240712。Presentation_240713_16.jpg" alt="股票分析實務">
             </div>
             <p>
                 在「投資理財」選修課程中，我參與了股票競技場模擬投資。我並非盲目跟風，而是透過新聞媒體分析市場資訊的背後意圖。以「寒舍」作為標的，準確預判觀光業復甦與季節性訂房潮利多。
@@ -205,32 +255,40 @@
                     <label>RISK CONTROL</label>
                 </div>
             </div>
+            <!-- 在這裡將 # 替換為你的檔案名稱，例如 report.pdf -->
+            <a href="企業案例 研究和報告.pdf" target="_blank" class="action-btn">VIEW DOCUMENT // 完整分析報告</a>
         </section>
 
         <section>
             <span class="section-header">EXTERNALITY_02</span>
             <h2>環境思辨：地質考察</h2>
             <div class="image-box">
+                <!-- 將圖片路徑改回本地檔案 -->
                 <img src="geology.jpg" alt="地質考察現場">
             </div>
             <p>
                 在考察烏溪卓蘭層的過程中，發現壯麗地景旁緊鄰垃圾掩埋場，直觀展現了經濟發展中的「負面外部性」。這啟發我思考，唯有透過整體的經濟激勵機制與政策框架，才能在環境永續與開發之間取得均衡。
             </p>
+            <!-- 在這裡將 # 替換為你的檔案名稱 -->
+            <a href="烏溪卓蘭層剖面_2月27日_楊秉宥.docx" target="_blank" class="action-btn">VIEW DOCUMENT // 實地考察紀錄</a>
         </section>
 
         <section>
             <span class="section-header">GLOBAL_SDGs_03</span>
             <h2>全球視野：跨域思辨</h2>
             <div class="image-box">
+                <!-- 將圖片路徑改回本地檔案 -->
                 <img src="ubc_trip.jpg" alt="加拿大UBC遊學">
             </div>
             <p>
                 參加加拿大 UBC 遊學團，擴展對 SDGs 的認知。我嘗試將烏溪觀察到的開發壓力與全球性減碳趨勢對接，練習在不同尺度下思考資源分配問題。經濟學是解決全球資源不均與環境變遷的基礎框架。
             </p>
+            <!-- 在這裡將 # 替換為你的檔案名稱 -->
+            <a href="ubc.pdf" target="_blank" class="action-btn">VIEW DOCUMENT // 跨域反思心得</a>
         </section>
 
         <section style="background: #000; color: #fff; border: none;">
-            <span class="section-header" style="color: #444;">FUTURE_VISION</span>
+            <span class="section-header" style="color: #666;">FUTURE_VISION</span>
             <h2 style="color: #fff; border-color: #fff;">未來願景</h2>
             <p style="color: #ccc;">
                 我不滿足於單純的感性觀察，而是渴望在貴系嚴謹的訓練下掌握計量分析與經濟模型。我已準備好投入高密度的專業訓練，將對技術分析的堅持與社會議題的關懷，淬煉成足以應對未來挑戰的專業實踐力。
@@ -239,6 +297,7 @@
 
     </div>
 
+    <!-- SVG 濾鏡定義區 -->
     <svg>
         <filter id="ultra-chrome-reflect" x="-20%" y="-20%" width="140%" height="140%">
             <feTurbulence id="turb" type="fractalNoise" baseFrequency="0.015" numOctaves="3" result="noise" />
@@ -263,22 +322,43 @@
         const turb = document.querySelector('#turb');
         const disp = document.querySelector('#disp');
         const light = document.querySelector('#light');
+        const liquidName = document.querySelector('.liquid-name');
 
-        window.addEventListener('mousemove', (e) => {
-            const x = e.clientX / window.innerWidth;
-            const y = e.clientY / window.innerHeight;
+        // 將濾鏡更新邏輯抽離，方便滑鼠與觸控共用
+        function updateFilter(clientX, clientY) {
+            const x = clientX / window.innerWidth;
+            const y = clientY / window.innerHeight;
             
-            // 互動：反光角度隨滑鼠轉動
+            // 互動：反光角度隨游標轉動
             light.setAttribute('azimuth', x * 360);
             
             // 互動：波紋流動與變形
             turb.setAttribute('baseFrequency', 0.01 + (x * 0.01));
             disp.setAttribute('scale', 20 + (y * 30));
+        }
+
+        // 電腦版滑鼠事件
+        window.addEventListener('mousemove', (e) => {
+            updateFilter(e.clientX, e.clientY);
         });
 
-        // 點擊震盪效果
-        document.querySelector('.liquid-name').addEventListener('mousedown', () => disp.setAttribute('scale', '100'));
-        document.querySelector('.liquid-name').addEventListener('mouseup', () => disp.setAttribute('scale', '30'));
+        // 手機版觸控事件
+        window.addEventListener('touchmove', (e) => {
+            if(e.touches.length > 0) {
+                updateFilter(e.touches[0].clientX, e.touches[0].clientY);
+            }
+        });
+
+        // 點擊/觸控震盪效果 (放大 scale)
+        const triggerShock = () => disp.setAttribute('scale', '100');
+        const resetShock = () => disp.setAttribute('scale', '30');
+
+        liquidName.addEventListener('mousedown', triggerShock);
+        liquidName.addEventListener('mouseup', resetShock);
+        liquidName.addEventListener('mouseleave', resetShock);
+        
+        liquidName.addEventListener('touchstart', triggerShock);
+        liquidName.addEventListener('touchend', resetShock);
     </script>
 </body>
 </html>
